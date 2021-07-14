@@ -27,9 +27,9 @@ class CreditService
         $this->creditDtoValidator = $creditDtoValidator;
     }
 
-    public function getCredit(Request $request): Product
+    public function getCredit(array $data): Product
     {
-        $dto = $this->creditDtoFactory->create($request);
+        $dto = $this->creditDtoFactory->create($data);
         $this->creditDtoValidator->validate($dto);
         $handler = $this->chainFactory->create();
         return $handler->handle($dto);

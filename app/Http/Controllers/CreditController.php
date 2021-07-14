@@ -17,7 +17,8 @@ class CreditController extends Controller
 
     public function index(Request $request, Response $response)
     {
-        $result = $this->creditService->getCredit($request);
+        $data = $request->request->all();
+        $result = $this->creditService->getCredit($data);
 
         return $result;
     }

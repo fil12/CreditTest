@@ -9,16 +9,16 @@ use Illuminate\Http\Request;
 
 class CreditDtoFactory
 {
-    public function create(Request $request): CreditRequestDto
+    public function create(array $data): CreditRequestDto
     {
-        $data = $request->request->all();
+
         return new CreditRequestDto(
-            $data['firstName'],
-            $data['secondName'],
-            $data['lastName'],
-            $data['age'],
-            $data['gender'],
-            $data['creditSum']
+            $data['firstName'] ?? null,
+            $data['secondName'] ?? null,
+            $data['lastName'] ?? null,
+            $data['age'] ?? null,
+            $data['gender'] ?? null,
+            $data['creditSum'] ?? null
         );
     }
 }
