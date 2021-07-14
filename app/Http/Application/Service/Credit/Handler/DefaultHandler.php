@@ -15,7 +15,7 @@ class DefaultHandler extends CreditHandler
      */
     public function handle(CreditRequestDto $dto): Product
     {
-        dd($this);
+
       return new Product(
           6,
           'Minimal credit',

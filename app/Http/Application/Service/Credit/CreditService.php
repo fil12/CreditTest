@@ -4,7 +4,6 @@ namespace App\Http\Application\Service\Credit;
 
 use App\Http\Domain\Product\Product;
 use App\Http\Domain\Product\Validation\CreditDtoValidator;
-use Illuminate\Http\Request;
 
 class CreditService
 {

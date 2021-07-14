@@ -13,7 +13,6 @@ class FifthProductHandler extends CreditHandler
     protected $clientService;
     protected const MIN_SUM = 10000;
 
-
     /**
      * FirstProductHandler constructor.
      * @param $clientService
@@ -27,7 +26,7 @@ class FifthProductHandler extends CreditHandler
     {
         $client = $this->clientService->getClientByCreditDto($dto);
 
-        if ( $client->getCreditCount() > 4 && $dto->getCreditSum() > self::MIN_SUM) {
+        if ( $client->getCreditCount() > 4 && $dto->getCreditSum() >= self::MIN_SUM) {
             return new Product(
                 5,
                 'credit №4',
