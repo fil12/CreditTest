@@ -27,7 +27,7 @@ class FifthProductHandler extends CreditHandler
     {
         $client = $this->clientService->getClientByCreditDto($dto);
 
-        if ( $client->getCreditCount() > 4 && $dto->getCreditSum() > self::MIN_SUM) {
+        if ( $client->getCreditCount() > 4 && $dto->getCreditSum() >= self::MIN_SUM) {
             return new Product(
                 5,
                 'credit №4',
